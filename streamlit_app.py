@@ -65,8 +65,7 @@ def insert_row_snowflake(new_fruit):
     return "Thanks for adding " + new_fruit
     #my_cnx.close()
 
-new_fruit = streamlit.text_input('What fruit would you like to add?')    
-insert_row_snowflake(new_fruit)    
+
     
 streamlit.stop()  
 
