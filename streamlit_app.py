@@ -65,19 +65,16 @@ def insert_row_snowflake(new_fruit):
     return "Thanks for adding " + new_fruit
     #my_cnx.close()
 
-
-    
-streamlit.stop()  
-
-
 try:
   new_fruit = streamlit.text_input('What fruit would you like to add?')
   if not new_fruit:
     streamlit.error("Please add a fruit.")
   else:
-    insert_row_snowflake(new_fruit)
-    streamlit.dataframe(my_data_rows)
+    new_fruit_added=insert_row_snowflake(new_fruit)
+    streamlit.dataframe(new_fruit_added)
 except URLError as e:
   streamlit.error()  
+  
+streamlit.stop()    
   
 
